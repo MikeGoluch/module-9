@@ -1,13 +1,1 @@
-var femaleNames = ["Danusia" , "Helena" , "Grażyna" , "Chytra baba z Radomia"];
-var maleNames = ["Jacek" , "Dominik" , "Sławek" , "Wacek"];
-
-var allNames = femaleNames.concat(maleNames);
-console.log(allNames);
-
-var newName = "Marian";
-
-if (allNames.indexOf(newName) === -1) {
-    allNames.push(newName);
-}
-
-console.log(allNames);
+var text = "Velociraptor is a genus of herbivorous ceratopsid dinosaur that first appeared during the late Maastrichtian stage of the late Cretaceous period.";
