@@ -1,13 +1,16 @@
 function drawTree(numberOfRows) {
+    var star = "";
+    var space = "";
     for(var i = 0 ; i < numberOfRows ; i++) {
         var level = "";
         for(var j = 0 ; j < numberOfRows - i ; j++) {
-            level += " ";
+            space = space + " ";
         }
         for(var k = 0 ; k <= i * 2 ; k++) {
-            level += "*";
+            star = star + "*";
         }
-        console.log(level);
+        var spaceStar = space + star;
+        console.log(spaceStar);
     }
 }
 
