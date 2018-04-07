@@ -3,7 +3,7 @@ console.log(buttonClass);
 for(var i = 0 ; i < buttonClass.length ; i++) {
     var newElem = document.createElement("p");
 
-    newElem.innerHTML = buttonClass[i];
+    newElem.innerText = buttonClass[i];
 
     buttonClass[i].appendChild(newElem);
 
