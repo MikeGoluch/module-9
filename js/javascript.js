@@ -1,8 +1,7 @@
 function drawTree(numberOfRows) {
-    var star = "";
-    var space = "";
     for(var i = 0 ; i < numberOfRows ; i++) {
-        var level = "";
+        var star = "";
+        var space = "";
         for(var j = 0 ; j < numberOfRows - i ; j++) {
             space = space + " ";
         }
@@ -14,20 +13,21 @@ function drawTree(numberOfRows) {
     }
 }
 
-console.log(drawTree(5));
+drawTree(5);
 
 /*
 function drawTree(numberOfRows) {
     for(var i = 0 ; i < numberOfRows ; i++) {
+        var level = "";
         for(var j = 0 ; j < numberOfRows - i ; j++) {
-            document.write(" ");
+            level += " ";
         }
         for(var k = 0 ; k <= i * 2 ; k++) {
-            document.write("*");
+            level += "*";
         }
-        console.log("\n");
+        console.log(level);
     }
 }
 
-console.log(drawTree(5));
+drawTree(5);
 */
