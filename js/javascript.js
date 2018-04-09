@@ -1,8 +1,14 @@
 var buttonClass = document.getElementsByClassName("button");
 console.log(buttonClass);
 
+var divTag = document.createElement("div");
+divTag.setAttribute("id", "testUl");
+
 var newUlElem = document.createElement("ul");
-console.log(newUlElem);
+
+document.body.appendChild(divTag);
+divTag.appendChild(newUlElem);
+
 
 for(var i = 0 ; i < buttonClass.length ; i++) {
 
@@ -16,4 +22,5 @@ for(var i = 0 ; i < buttonClass.length ; i++) {
 
     newUlElem.appendChild(newLiElemDom);
 }
+
 
