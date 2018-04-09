@@ -1,12 +1,12 @@
 var buttonClass = document.getElementsByClassName("button");
-console.log(buttonClass);
 
 var divTag = document.createElement("div");
 divTag.setAttribute("id", "testUl");
 
 var newUlElem = document.createElement("ul");
+newUlElem.setAttribute("id", "styleUl");
 
-document.body.appendChild(divTag);
+
 divTag.appendChild(newUlElem);
 
 
@@ -24,3 +24,4 @@ for(var i = 0 ; i < buttonClass.length ; i++) {
 }
 
 
+document.body.appendChild(divTag);
