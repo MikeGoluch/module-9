@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm-run-all build:*",
-    "build:sass": "node-sass --output-style compact -o css sass",
-    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "watch:sass": "node-sass --output-style expanded --source-map true -o css sass --watch"
+    "build:sass": "node-sass --output-style compact -o css scss",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css scss",
+    "watch:sass": "node-sass --output-style expanded --source-map true -o css scss --watch"
   },
   "repository": {
     "type": "git",
