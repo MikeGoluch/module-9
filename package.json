@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MikeGoluch/module-9/issues"
   },
-  "homepage": "https://github.com/MikeGoluch/module-9#readme"
+  "homepage": "https://github.com/MikeGoluch/module-9#readme",
+  "devDependencies": {
+    "node-sass": "^4.8.3"
+  }
 }
