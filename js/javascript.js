@@ -69,3 +69,22 @@ function newGame() {
   function playerPick(playerPick) {
     console.log(playerPick);
 }
+
+//computer pick
+
+function getComputerPick() {
+    var possiblePicks = ["rock", "paper", "scissors"];
+    return possiblePicks[Math.floor(Math.random() * 3)];
+}
+
+var playerPickElem = document.getElementById("js-playerPick");
+var computerPickElem = document.getElementById("js-computerPick");
+var playerResultElem = document.getElementById("js-playerResult");
+var computerResultElem = document.getElementById("js-computerResult");
+
+function playerPick(playerPick) {
+    var computerPick = getComputerPick();
+
+    playerPickElem.innerHTML = playerPick;
+    computerPickElem.innerHTML = computerPick;
+}
