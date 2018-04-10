@@ -44,3 +44,28 @@ function setGameElements() {
 }
 
 setGameElements();
+
+//game begin
+
+var playerPointsElem = document.getElementById("js-playerPoints");
+var playerNameElem = document.getElementById("js-playerName");
+var computerPointsElem = document.getElementById("js-computerPoints");
+
+function newGame() {
+    player.name = prompt("Please enter your name", "imię gracza");
+    if (player.name) {
+      player.score = computer.score = 0;
+      gameState = "started";
+      setGameElements();
+  
+      playerNameElem.innerHTML = player.name;
+      // setGamePoints(); // This function has not been created yet
+    }
+  
+  }
+
+  //player pick
+
+  function playerPick(playerPick) {
+    console.log(playerPick);
+}
