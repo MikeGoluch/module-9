@@ -124,16 +124,26 @@ function checkRoundWinner(playerPick, computerPick) {
     if (winnerIs === "player") {
           playerResultElem.innerHTML = "Win!";
           player.score++;
-          playerPointsElem.innerHTML = player.score;
+          setGamePoints();
+          //playerPointsElem.innerHTML = player.score;
           console.log(player.score);
     } else if (winnerIs === "computer") {
           computerResultElem.innerHTML = "Win!";
           computer.score++;
-          computerPointsElem.innerHTML = computer.score;
+          setGamePoints();
+          //computerPointsElem.innerHTML = computer.score;
           console.log(computer.score);
     }
 theWinnerIs();
 }
+
+//function for updating scores on page
+
+function setGamePoints() {
+    playerPointsElem.innerHTML = player.score;
+    computerPointsElem.innerHTML = computer.score;
+}
+
 
 //function for displaying the winner after reaching 10 points
 
@@ -151,6 +161,8 @@ function theWinnerIs () {
     }
 }
 
+//function for resetting scores after reaching 10 points and starting new game
+
 function resetScores () {
     player.score = 0;
     playerPointsElem.innerHTML = player.score;
@@ -158,14 +170,7 @@ function resetScores () {
     computerPointsElem.innerHTML = computer.score;
 }
 
-//deleted fucntion
 
-// function setGamePoints() {
-//     playerPointsElem.innerHTML = player.score;
-
-//     computerPointsElem.innerHTML = computer.score;
-
-// }
 
 
 
