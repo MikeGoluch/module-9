@@ -100,8 +100,6 @@ function playerPick(playerPick) {
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
-    console.log(player.score);
-    console.log(computer.score);
 }
 
 //function for counting points after each round 
@@ -125,14 +123,10 @@ function checkRoundWinner(playerPick, computerPick) {
           playerResultElem.innerHTML = "Win!";
           player.score++;
           setGamePoints();
-          //playerPointsElem.innerHTML = player.score;
-          console.log(player.score);
     } else if (winnerIs === "computer") {
           computerResultElem.innerHTML = "Win!";
           computer.score++;
           setGamePoints();
-          //computerPointsElem.innerHTML = computer.score;
-          console.log(computer.score);
     }
 theWinnerIs();
 }
