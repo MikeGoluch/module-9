@@ -64,18 +64,18 @@ function newGame() {
       setGameElements();
   
       playerNameElem.innerHTML = player.name;
-      // setGamePoints(); // This function has not been created yet
+      //setGamePoints();
     }
-  
-  }
-
-  //player pick
-
-  function playerPick(playerPick) {
-    console.log(playerPick);
 }
 
-//computer pick
+// function setGamePoints() {
+//     playerPointsElem.innerHTML = player.score;
+
+//     computerPointsElem.innerHTML = computer.score;
+
+// }
+
+//computer&player pick
 
 function getComputerPick() {
     var possiblePicks = ["rock", "paper", "scissors"];
@@ -94,6 +94,8 @@ function playerPick(playerPick) {
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
+    console.log(player.score);
+    console.log(computer.score);
 }
 
 function checkRoundWinner(playerPick, computerPick) {
@@ -101,22 +103,34 @@ function checkRoundWinner(playerPick, computerPick) {
   
     var winnerIs = "player";
   
-      if (playerPick == computerPick) {
+    if (playerPick === computerPick) {
           winnerIs = "noone"; // remis
     } else if (
-          (computerPick == "rock" &&  playerPick == "scissors") ||
-          (computerPick == "scissors" &&  playerPick == "paper") ||
-          (computerPick == "paper" &&  playerPick == "rock")) {
+          (computerPick === "rock" &&  playerPick === "scissors") ||
+          (computerPick === "scissors" &&  playerPick === "paper") ||
+          (computerPick === "paper" &&  playerPick === "rock")) {
   
           winnerIs = "computer";
     }
   
-      if (winnerIs == "player") {
+    if (winnerIs === "player") {
           playerResultElem.innerHTML = "Win!";
           player.score++;
-    } else if (winnerIs == "computer") {
+          playerPointsElem.innerHTML = player.score;
+          console.log(player.score);
+    } else if (winnerIs === "computer") {
           computerResultElem.innerHTML = "Win!";
           computer.score++;
+          computerPointsElem.innerHTML = computer.score;
+          console.log(computer.score);
     }
-  
+theWinnerIs();
+}
+
+function theWinnerIs () {
+    if (player.score === 10) {
+        alert("The winner is " + player.name);
+    } else if (computer.score === 10) {
+        alert("The winner is computer");
+    }
 }
