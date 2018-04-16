@@ -50,6 +50,10 @@ pickRock.addEventListener("click", function() { playerPick("rock") });
 pickPaper.addEventListener("click", function() { playerPick("paper") });
 pickScissors.addEventListener("click", function() { playerPick("scissors") });
 
+//INITIALIZE
+
+setGameElements();
+
 //FUNCTIONS
 //function for setting game elements in the beginning stage
 
@@ -69,8 +73,6 @@ function setGameElements() {
           resultsElem.style.display = "none";
     }
 }
-
-setGameElements();
 
 //new game function
 
@@ -107,51 +109,43 @@ function playerPick(playerPick) {
 function checkRoundWinner(playerPick, computerPick) {
     playerResultElem.innerHTML = computerResultElem.innerHTML = "";
   
-    var winnerIs = "player";
-  
     if (playerPick === computerPick) {
-          winnerIs = "noone"; // remis
+        drawScoreHtml(computerResultElem, playerResultElem)
     } else if (
-          (computerPick === "rock" &&  playerPick === "scissors") ||
-          (computerPick === "scissors" &&  playerPick === "paper") ||
-          (computerPick === "paper" &&  playerPick === "rock")) {
-  
-          winnerIs = "computer";
-    }
-  
-    if (winnerIs === "player") {
-          playerResultElem.innerHTML = "Win!";
-          player.score++;
-          setGamePoints();
-    } else if (winnerIs === "computer") {
-          computerResultElem.innerHTML = "Win!";
-          computer.score++;
-          setGamePoints();
-    }
-theWinnerIs();
+        (computerPick === "rock" &&  playerPick === "scissors") ||
+        (computerPick === "scissors" &&  playerPick === "paper") ||
+        (computerPick === "paper" &&  playerPick === "rock")) {
+        refreshComputerScoreHtml(computerResultElem, computer);
+    } else {refreshPlayerScoreHtml(playerResultElem, player)};
+
+announceGameWinner();
 }
 
-//function for updating scores on page
+//functions for adding and refreshing score on the html page
 
-function setGamePoints() {
-    playerPointsElem.innerHTML = player.score;
-    computerPointsElem.innerHTML = computer.score;
+function refreshPlayerScoreHtml(playerResultElem, player) {
+    playerResultElem.innerHTML = "Win!";
+    player.score++;
+    setGamePoints();
 }
-
+function refreshComputerScoreHtml(computerResultElem, computer) {
+    computerResultElem.innerHTML = "Win!";
+    computer.score++;
+    setGamePoints();
+}
+function drawScoreHtml(computerResultElem, playerResultElem) {
+    computerResultElem.innerHTML = playerResultElem.innerHTML = "Draw!";
+}
 
 //function for displaying the winner after reaching 10 points
 
-function theWinnerIs () {
+function announceGameWinner() {
     if (player.score === 10) {
         alert("The winner is " + player.name);
-        gameState = "ended";
-        setGameElements();
-        resetScores();
+        setGameAfterWin();
     } else if (computer.score === 10) {
         alert("The winner is computer");
-        gameState = "ended";
-        setGameElements();
-        resetScores();
+        setGameAfterWin();
     }
 }
 
@@ -164,7 +158,18 @@ function resetScores () {
     computerPointsElem.innerHTML = computer.score;
 }
 
+function setGameAfterWin() {
+    gameState = "ended";
+    setGameElements();
+    resetScores();
+}
 
+//function for updating scores on page
+
+function setGamePoints() {
+    playerPointsElem.innerHTML = player.score;
+    computerPointsElem.innerHTML = computer.score;
+}
 
 
 
