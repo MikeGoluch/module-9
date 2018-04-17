@@ -115,24 +115,32 @@ function checkRoundWinner(playerPick, computerPick) {
         (computerPick === "rock" &&  playerPick === "scissors") ||
         (computerPick === "scissors" &&  playerPick === "paper") ||
         (computerPick === "paper" &&  playerPick === "rock")) {
-        refreshComputerScoreHtml(computerResultElem, computer);
-    } else {refreshPlayerScoreHtml(playerResultElem, player)};
+        refreshScoreHtml(computerResultElem, computer);
+    } else {refreshScoreHtml(playerResultElem, player)};
 
 announceGameWinner();
 }
 
+
+
 //functions for adding and refreshing score on the html page
 
-function refreshPlayerScoreHtml(playerResultElem, player) {
-    playerResultElem.innerHTML = "Win!";
-    player.score++;
+function refreshScoreHtml(someResultElem, object) {
+    someResultElem.innerHTML = "Win!";
+    object.score++;
     setGamePoints();
 }
-function refreshComputerScoreHtml(computerResultElem, computer) {
-    computerResultElem.innerHTML = "Win!";
-    computer.score++;
-    setGamePoints();
-}
+
+// function refreshPlayerScoreHtml(playerResultElem, player) {
+//     playerResultElem.innerHTML = "Win!";
+//     player.score++;
+//     setGamePoints();
+// }
+// function refreshComputerScoreHtml(computerResultElem, computer) {
+//     computerResultElem.innerHTML = "Win!";
+//     computer.score++;
+//     setGamePoints();
+// }
 function drawScoreHtml(computerResultElem, playerResultElem) {
     computerResultElem.innerHTML = playerResultElem.innerHTML = "Draw!";
 }
